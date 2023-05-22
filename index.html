@@ -1,0 +1,431 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Food Waste</title>
+    <!-- Bulma -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <!-- My CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Chart.js -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js/dist/chart.umd.min.js"></script>
+    <!-- My Javascript -->
+    <script src="script.js" defer></script>
+  </head>
+  <body class="limit-height">
+    <!-- Tabs -->
+    <div class="mt-5 tabs is-centered is-boxed is-large">
+      <ul>
+        <li class="tab is-active" onclick="openTab(event,'Home')"><a><span>Home</span></a></li>
+        <li class="tab" onclick="openTab(event,'Data')"><a><span>Data</span></a></li>
+        <li class="tab" onclick="openTab(event,'Information')"><a><span>Information</span></a></li>
+        <li class="tab" onclick="openTab(event,'Survey')"><a><span>Survey</span></a></li>
+      </ul>
+    </div>
+
+    <!-- Home -->
+    <div class="content-tab" id="Home">
+      <div class="container">
+        <div class="hero is-home is-small mb-5">
+          <div class="hero-body">
+            <div class="container">
+              <h1 class="title">Food Waste</h1>
+            </div>
+          </div>
+        </div>  
+        <img src="photos/food-bg.jpg" class="brighten">
+      </div>
+    </div>
+  </body>
+
+    <!-- Data -->
+    <div class="content-tab hide" id="Data">
+      <div class="container">
+        <div class="hero is-data is-small mb-5">
+          <div class="hero-body">
+            <div class="container">
+              <h1 class="title">Data</h1>
+            </div>
+          </div>
+        </div>  
+
+        <!-- doughnut -->
+        <div class="box">
+          <canvas id="myChart" style="position: relative; height:40vh; width:80vw"></canvas>
+        </div>
+
+        <!-- table -->
+        <div class="box">
+          <table class="table">
+            <thead>
+              <tr>
+                <th><abbr title="Position">Pos</abbr></th>
+                <th>Team</th>
+                <th><abbr title="Played">Pld</abbr></th>
+                <th><abbr title="Won">W</abbr></th>
+                <th><abbr title="Drawn">D</abbr></th>
+                <th><abbr title="Lost">L</abbr></th>
+                <th><abbr title="Goals for">GF</abbr></th>
+                <th><abbr title="Goals against">GA</abbr></th>
+                <th><abbr title="Goal difference">GD</abbr></th>
+                <th><abbr title="Points">Pts</abbr></th>
+                <th>Qualification or relegation</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th>1</th>
+                <td><a href="https://en.wikipedia.org/wiki/Leicester_City_F.C." title="Leicester City F.C.">Leicester City</a> <strong>(C)</strong>
+                </td>
+                <td>38</td>
+                <td>23</td>
+                <td>12</td>
+                <td>3</td>
+                <td>68</td>
+                <td>36</td>
+                <td>+32</td>
+                <td>81</td>
+                <td>Qualification for the <a href="https://en.wikipedia.org/wiki/2016%E2%80%9317_UEFA_Champions_League#Group_stage" title="2016–17 UEFA Champions League">Champions League group stage</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- Information -->
+    <div class="content-tab hide" id="Information">
+      <div class="container">
+        <div class="hero is-information is-small mb-5">
+          <div class="hero-body">
+            <div class="container">
+              <h1 class="title">Information</h1>
+            </div>
+          </div>
+        </div>
+        <div class="columns is-vcentered2">
+          <div class="column">
+            <div class="card">
+              <div class="card-image">
+                <figure class="image is-16by9">
+                  <img src="photos/food1.jpg" alt="Placeholder image" class="img-cover">
+                </figure>
+              </div>
+              <div class="card-content">
+                <div class="media">
+                  <div class="media-content">
+                    <p class="title is-4">General Info</p>
+                  </div>
+                </div>
+            
+                <div class="content">
+                  Food is waster when we buy more than we need, store it incorrectlym, throw away leftovers
+                  and cook too much. When we throw away food, we also waste all the water and energy used to produce,
+                  package and transport food from the farm to our plates. This waste creates significant environmental impacts
+                  and is costly to family budgets.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="column">
+            <div class="card">
+              <div class="card-image">
+                <figure class="image is-16by9">
+                  <img src="photos/food2.jpg" alt="Placeholder image" class="img-cover">
+                </figure>
+              </div>
+              <div class="card-content">
+                <div class="media">
+                  <div class="media-content">
+                    <p class="title is-4">Solutions</p>
+                  </div>
+                </div>
+            
+                <div class="content">
+                  <ol>
+                    <li>Buy order and cook only what you can finish. When eating out, order only what you can finish.</li>
+                    <li>Turn leftovers into new dishes. Instead of throwing away your leftovers, turn them
+                      into tasty new dishes.
+                    </li>
+                    <li>Donate your excess food</li>
+                  </ol>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="column">
+            <div class="card">
+              <div class="video-container">
+                <iframe width="auto" height="auto" src="https://www.youtube.com/embed/rjxwfp8rs34" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+              </div>
+              <div class="card-content">
+                <div class="media-content">
+                  <p class="title is-4">Youtube video</p>
+                  <div class="content">
+                    by Wexford County Council and Waterford City and County Council
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Survey -->
+    <div class="content-tab hide" id="Survey">
+      <div class="container">
+        <div class="hero is-survey is-small mb-5">
+          <div class="hero-body">
+            <div class="container">
+              <h1 class="title">Survey</h1>
+            </div>
+          </div>
+        </div>
+        <div class="box has-background-light mx-15">
+          <!-- Survey form -->
+          <form id="surveyForm">
+            <!-- Question 1 -->
+            <div class="field">
+              <div class="label is-normal">
+                <label class="label">1. How much food would you say that your household usually throws away each week?</label>
+              </div>
+              <div class="select ">
+                <select required>
+                  <option></option>
+                  <option>An excessive amount</option>
+                  <option>More than you should</option>
+                  <option>A reasonable amount</option>
+                  <option>Very little</option>
+                  <option>None</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Question 2 -->
+            <div class="field">
+              <div class="label is-normal">
+                <label class="label">2. Given that 40% of the contents of the average household bin is food - do you think you are below, above, or in line with this average?</label>
+              </div>
+              <div class="select ">
+                <select required>
+                  <option></option>
+                  <option>In line with average</option>
+                  <option>Somewhat below</option>
+                  <option>Very far below</option>
+                  <option>Somewhat above</option>
+                  <option>Very far above</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Question 3 -->
+            <div class="field">
+              <div class="label is-normal">
+                <label class="label">3. Given it's estimated that on average households waste at least 20% of the food they buy, how do you think your household compares?</label>
+              </div>
+              <div class="select ">
+                <select required>
+                  <option></option>
+                  <option>More than that</option>
+                  <option>About the same</option>
+                  <option>Less than that</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Question 4 -->
+            <div class="field">
+              <div class="label is-normal">
+                <label class="label">4. How many times in the last week have you eaten leftovers?</label>
+              </div>
+              <div class="select ">
+                <select required>
+                  <option></option>
+                  <option>I throw away all my leftovers</option>
+                  <option>0-1 times</option>
+                  <option>2-3 times</option>
+                  <option>4-5 times</option>
+                  <option>6-7 times</option>
+                  <option>8+ times</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Question 5 -->
+            <div class="field">
+              <div class="label is-normal">
+                <label class="label">5. How would you describe your planning habits for grocery shopping?</label>
+              </div>
+              <div class="select ">
+                <select required>
+                  <option></option>
+                  <option>I make a list of things i want to buy but, majority of things are bought during that time</option>
+                  <option>I make a list of things that are needed and usually dont deviate from the list</option>
+                  <option>I don't make any list, I make all the decisions within the store</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Question 6 -->
+            <div class="field">
+              <div class="label is-normal">
+                <label class="label">6. How would you describe your planning habits for grocery shopping?</label>
+              </div>
+              <div class="select ">
+                <select required>
+                  <option></option>
+                  <option>1-2 times</option>
+                  <option>3 times</option>
+                  <option>4-5 times</option>
+                  <option>6+ times</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Question 7 -->
+            <div class="field">
+              <div class="label is-normal">
+                <label class="label">7. What do you do with leftovers?</label>
+              </div>
+              <div class="select ">
+                <select required>
+                  <option></option>
+                  <option>Store them and consume them throughout the day</option>
+                  <option>Consume them until the end of the week</option>
+                  <option>Throw them away</option>
+                  <option>Package and give them to people in need</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Question 8 -->
+            <div class="field">
+              <div class="label is-normal">
+                <label class="label">8.  Do you do other things to manage your food waste?</label>
+              </div>
+              <label class="checkbox block">
+                <input type="checkbox" name="answer">
+                I have a compost heap
+              </label>
+              <label class="checkbox block">
+                <input type="checkbox" name="answer">
+                I have a worm farm
+              </label>
+              <label class="checkbox block">
+                <input type="checkbox" name="answer">
+                I have chickens
+              </label>
+              <label class="checkbox block">
+                <input type="checkbox" name="answer">
+                I give leftover food to my pets
+              </label>
+              <label class="checkbox block">
+                <input type="checkbox" name="answer">
+                I give to a community compost
+              </label>
+              <label class="checkbox block">
+                <input type="checkbox" name="answer">
+                Nothing
+              </label>
+            </div>
+
+            <!-- Question 9 -->
+            <div class="field">
+              <div class="label is-normal">
+                <label class="label">9. Which of these actions are you currently doing at home?</label>
+              </div>
+              <label class="checkbox block">
+                <input type="checkbox" name="answer">
+                Checking the fridge/ freezer/pantry before shopping
+              </label>
+              <label class="checkbox block">
+                <input type="checkbox" name="answer">
+                Writing a meal plan
+              </label>
+              <label class="checkbox block">
+                <input type="checkbox" name="answer">
+                Writing a shopping list
+              </label>
+              <label class="checkbox block">
+                <input type="checkbox" name="answer">
+                Buying only what is needed
+              </label>
+              <label class="checkbox block">
+                <input type="checkbox" name="answer">
+                Check use by and best before dates
+              </label>
+              <label class="checkbox block">
+                <input type="checkbox" name="answer">
+                Consider how food is stored to keep it fresh
+              </label>
+              <label class="checkbox block">
+                <input type="checkbox" name="answer">
+                Consider portion size
+              </label>
+              <label class="checkbox block">
+                <input type="checkbox" name="answer">
+                Use leftovers
+              </label>
+              <label class="checkbox block">
+                <input type="checkbox" name="answer">
+                I make vegetable stock from my food scraps
+              </label>
+              <label class="checkbox block">
+                <input type="checkbox" name="answer">
+                None of the above
+              </label>
+              <label class="checkbox block">
+                <input type="checkbox" name="answer">
+                All of the above
+              </label>
+            </div>
+
+            <!-- Question 10 -->
+            <div class="checkbox">
+              <div class="label is-normal">
+                <label class="label">10. Do you do other things to manage your food waste?</label>
+              </div>
+              <label class="checkbox block">
+                <input type="checkbox" name="answer">
+                I have a compost heap 
+              </label>
+              <label class="checkbox block">
+                <input type="checkbox" name="answer">
+                I have a worm farm
+              </label>
+              <label class="checkbox block">
+                <input type="checkbox" name="answer">
+                I have chickens
+              </label>
+              <label class="checkbox block">
+                <input type="checkbox" name="answer">
+                I give leftover food to my pets
+              </label>
+              <label class="checkbox block">
+                <input type="checkbox" name="answer">
+                I give to a community compost
+              </label>
+              <label class="checkbox block">
+                <input type="checkbox" name="answer">
+                Nothing
+              </label>
+            </div>
+
+            <!-- Button -->
+            <div class="mt-3">
+              <button type="submit" class="button is-success">Submit</button>
+            </div>
+          
+          </form>
+
+          <!-- Form Success Message -->
+          <h2 id="surveyMessage" class="hide has-text-success is-size-2 has-text-centered">Data Submitted!</h2>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,106 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+.chartMenu {
+  width: 100vw;
+  height: 40px;
+  background: #1A1A1A;
+  color: rgba(54, 162, 235, 1);
+}
+.chartMenu p {
+  padding: 10px;
+  font-size: 20px;
+}
+.chartCard {
+  width: 100vw;
+  height: calc(100vh - 40px);
+  background: rgba(54, 162, 235, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.chartBox {
+  width: 700px;
+  padding: 20px;
+  border-radius: 20px;
+  border: solid 3px rgba(54, 162, 235, 1);
+  background: white;
+}
+
+.limit-height {
+  overflow: hidden;
+  height: 100vh;
+}
+
+.hide {
+  display: none;
+}
+
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.card-image {
+  overflow:hidden;
+}
+
+.img-cover {
+  object-fit: cover;
+}
+
+.hero {
+  border-radius: 0.25rem;
+}
+
+.hero .title {
+  color: white;
+}
+
+.hero.is-home {
+  background: linear-gradient(to right,#48c78e,#74ecb6 );
+}
+
+.hero.is-information {
+  background: linear-gradient(to right,rgb(237, 184, 143), rgb(255, 224, 138));
+}
+
+.hero.is-data {
+  background: linear-gradient(to right,#f14668, #ff7f98);
+}
+
+.hero.is-survey {
+  background: linear-gradient(to right,#4274d5, #4a9be7);
+}
+
+.brighten {
+  filter: brightness(105%);
+}
+
+.block {
+  display: block;
+  margin: 0!important;
+}
+
+.field:not(:last-child) {
+  margin-bottom: 1.25rem;
+}
+
+.mx-15 {
+  margin-left: 180px;
+  margin-right: 180px;
+}
+
+/* #4a9be7 #4274d5 */
