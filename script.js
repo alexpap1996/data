@@ -28,37 +28,193 @@ function submitform(evt) {
 }
 document.getElementById('surveyForm').addEventListener('submit', submitform)
 
-// Chart Code
+
+/* Chart Code */
+/* Bar */
+const countryData = [
+  {
+    name: 'China',
+    tonsOfFoodWaste: 91700000
+  },
+  {
+    name: 'India',
+    tonsOfFoodWaste: 68750430
+  },
+  {
+    name: 'United States',
+    tonsOfFoodWaste: 20000000
+  },
+  {
+    name: 'Japan',
+    tonsOfFoodWaste: 8159350
+  },
+  {
+    name: 'Germany',
+    tonsOfFoodWaste: 6263760
+  },
+  {
+    name: 'France',
+    tonsOfFoodWaste: 5552340
+  },
+  {
+    name: 'United Kingdom',
+    tonsOfFoodWaste: 5199360
+  },
+  {
+    name: 'Russia',
+    tonsOfFoodWaste: 4650871
+  },
+  {
+    name: 'Spain',
+    tonsOfFoodWaste: 3567231
+  },
+  {
+    name: 'Australia',
+    tonsOfFoodWaste: 2546849
+  }
+]
+const countryLabels = countryData.map(country => country.name)
+const countryValues = countryData.map(country => country.tonsOfFoodWaste)
 const data = {
-  labels: [
-    'Red',
-    'Blue',
-    'Yellow'
-  ],
+  labels: countryLabels,
   datasets: [{
-    label: 'My First Dataset',
-    data: [300, 50, 100],
-    backgroundColor: [
-      'rgb(255, 99, 132)',
-      'rgb(54, 162, 235)',
-      'rgb(255, 205, 86)'
-    ],
+    label: 'Food Waste per country',
+    data: countryValues,
+    backgroundColor: ["#fd7f6f", "#7eb0d5", "#b2e061", "#bd7ebe", "#ffb55a", "#ffee65", "#beb9db", "#fdcce5", "#8bd3c7"],
     hoverOffset: 4
   }]
 };
 
-const config = {
-  type: 'pie',
+const barConfig = {
+  type: 'bar',
   data: data,
 };
 
-
-// render init block
-const chartEl = document.getElementById('myChart')
-const myChart = new Chart(
+const chartEl = document.getElementById('barChart')
+const barChart = new Chart(
   chartEl,
-  config
+  barConfig
 );
 
-myChart.canvas.style.height = '500px';
-myChart.canvas.style.width = '500px';
+barChart.canvas.style.height = '500px';
+barChart.canvas.style.width = '500px';
+
+const foodData = [
+  {
+    label: 'Households',
+    kg: 70,
+  },
+  {
+    label: 'Manufacture of food product and beverages',
+    kg: 26,
+  },
+  {
+    label: 'Primary production',
+    kg: 14,
+  },
+  {
+    label: 'Resturants and food services',
+    kg: 12,
+  },
+  {
+    label: 'Retail and other distribution of food',
+    kg: 9,
+  },
+]
+const foodLabels = foodData.map(food => food.label)
+const foodKgs = foodData.map(food => food.kg)
+const data2 = {
+  labels: foodLabels,
+  datasets: [{
+    label: 'Food Waste in the EU by main economic sectors, 2020',
+    data: foodKgs,
+    backgroundColor: ["#fd7f6f", "#7eb0d5", "#b2e061", "#bd7ebe", "#ffb55a", "#ffee65", "#beb9db", "#fdcce5", "#8bd3c7"],
+    hoverOffset: 4
+  }]
+};
+
+const circleConfig = {
+  type: 'pie',
+  data: data2,
+};
+
+const chartEl2 = document.getElementById('circleChart')
+const circleChart = new Chart(
+  chartEl2,
+  circleConfig
+);
+
+circleChart.canvas.style.height = '500px';
+circleChart.canvas.style.width = '500px';
+
+const tableData = [
+  {
+    year: 2012,
+    loses: 865,
+    foodWasted: 1.8
+  },
+  {
+    year: 2013,
+    loses: 876,
+    foodWasted: 1.8
+  },
+  {
+    year: 2014,
+    loses: 887,
+    foodWasted: 1.8
+  },
+  {
+    year: 2015,
+    loses: 890,
+    foodWasted: 1.9
+  },
+  {
+    year: 2016,
+    loses: 889,
+    foodWasted: 1.9
+  },
+  {
+    year: 2017,
+    loses: 900,
+    foodWasted: 1.9
+  },
+  {
+    year: 2018,
+    loses: 910,
+    foodWasted: 2
+  },
+  {
+    year: 2019,
+    loses: 937,
+    foodWasted: 2.3
+  },
+  {
+    year: 2020,
+    loses: 944,
+    foodWasted: 2.3
+  },
+  {
+    year: 2021,
+    loses: 960,
+    foodWasted: 2.3
+  },
+  {
+    year: 2022,
+    loses: 980,
+    foodWasted: 2.3
+  }
+]
+
+function generateTable(table, data) {
+  for (let element of data) {
+    let row = table.insertRow();
+    for (key in element) {
+      let cell = row.insertCell();
+      let text = document.createTextNode(element[key]);
+      cell.appendChild(text);
+    }
+  }
+}
+
+const table = document.querySelector("table");
+generateTable(table, tableData);

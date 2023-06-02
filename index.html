@@ -21,6 +21,7 @@
         <li class="tab" onclick="openTab(event,'Data')"><a><span>Data</span></a></li>
         <li class="tab" onclick="openTab(event,'Information')"><a><span>Information</span></a></li>
         <li class="tab" onclick="openTab(event,'Survey')"><a><span>Survey</span></a></li>
+        <li class="tab" onclick="openTab(event,'Citations')"><a><span>Citations</span></a></li>
       </ul>
     </div>
 
@@ -50,47 +51,34 @@
           </div>
         </div>  
 
-        <!-- doughnut -->
-        <div class="box">
-          <canvas id="myChart" style="position: relative; height:40vh; width:80vw"></canvas>
-        </div>
+        <div class="charts is-flex">
+          <div class="box column is-two-thirds-custom pr-2">
+            <canvas id="barChart"></canvas>
+            <p class="has-text-right has-text-grey-light is-size-7">Graph 1 shows the annual household food waste produced in selected countries worldwide</p>
+          </div>
 
-        <!-- table -->
-        <div class="box">
-          <table class="table">
-            <thead>
-              <tr>
-                <th><abbr title="Position">Pos</abbr></th>
-                <th>Team</th>
-                <th><abbr title="Played">Pld</abbr></th>
-                <th><abbr title="Won">W</abbr></th>
-                <th><abbr title="Drawn">D</abbr></th>
-                <th><abbr title="Lost">L</abbr></th>
-                <th><abbr title="Goals for">GF</abbr></th>
-                <th><abbr title="Goals against">GA</abbr></th>
-                <th><abbr title="Goal difference">GD</abbr></th>
-                <th><abbr title="Points">Pts</abbr></th>
-                <th>Qualification or relegation</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th>1</th>
-                <td><a href="https://en.wikipedia.org/wiki/Leicester_City_F.C." title="Leicester City F.C.">Leicester City</a> <strong>(C)</strong>
-                </td>
-                <td>38</td>
-                <td>23</td>
-                <td>12</td>
-                <td>3</td>
-                <td>68</td>
-                <td>36</td>
-                <td>+32</td>
-                <td>81</td>
-                <td>Qualification for the <a href="https://en.wikipedia.org/wiki/2016%E2%80%9317_UEFA_Champions_League#Group_stage" title="2016–17 UEFA Champions League">Champions League group stage</a></td>
-              </tr>
-            </tbody>
-          </table>
+          <!-- doughnut -->
+          <div class="box column is-one-third">
+            <canvas id="circleChart"></canvas>
+            <p class="has-text-right has-text-grey-light is-size-7">Graph 2 shows the food waste in the EU by main economic sectors</p>
+          </div>
         </div>
+        
+        <!-- table -->
+        <div class="box mb-4 mt-4">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Per Year/ Annually</th>
+                  <th>Economic Loses (In Dollars)</th>
+                  <th>Food Wasted (kg) Tons</th>
+                </tr>
+              </thead>
+              <tbody>
+              </tbody>
+            </table>
+            <p class="has-text-right has-text-grey-light is-size-7"> Table 1 shows food waste in (kg), as well as economic loses in (dollars), the past 10 years globally</p>
+          </div>
       </div>
     </div>
 
@@ -424,6 +412,33 @@
 
           <!-- Form Success Message -->
           <h2 id="surveyMessage" class="hide has-text-success is-size-2 has-text-centered">Data Submitted!</h2>
+        </div>
+      </div>
+    </div>
+
+    <!-- Citations -->
+    <div class="content-tab hide" id="Citations">
+      <div class="container">
+        <div class="hero is-citations is-small mb-5">
+          <div class="hero-body">
+            <div class="container">
+              <h1 class="title">Citations</h1>
+            </div>
+          </div>
+        </div>
+
+        <div class="content">
+          <ul>
+
+            
+            <li><a href="#">https://www.epa.gov/international-cooperation/international-efforts-wasted-food-recovery</a></li>
+            <li><a href="#">https://greenly.earth/en-us/blog/ecology-news/global-food-waste-in-2022</a></li>
+            <li><a href="#">https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Food_waste_and_food_waste_prevention_-_estimates</a></li>
+            <li><a href="#">https://www.dw.com/en/one-third-of-worlds-food-wasted-each-year-un-says/a-17083367</a></li>
+            <li><a href="#">https://www.hsph.harvard.edu/nutritionsource/sustainability/food-waste/</a></li>
+            <li><a href="#">https://foodprint.org/issues/the-problem-of-food-waste/</a></li>
+
+          </ul>
         </div>
       </div>
     </div>

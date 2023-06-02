@@ -85,6 +85,10 @@
   background: linear-gradient(to right,#4274d5, #4a9be7);
 }
 
+.hero.is-citations {
+  background: hsl(0, 0%, 71%)
+}
+
 .brighten {
   filter: brightness(105%);
 }
@@ -101,6 +105,19 @@
 .mx-15 {
   margin-left: 180px;
   margin-right: 180px;
+}
+
+.charts {
+  gap: 15px;
+}
+
+.is-two-thirds-custom {
+  width: calc(66% - 15px);
+  margin-bottom: 0 !important;
+}
+
+table {
+  width: 100%;
 }
 
 /* #4a9be7 #4274d5 */
